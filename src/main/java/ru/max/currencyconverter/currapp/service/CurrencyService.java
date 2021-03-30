@@ -2,7 +2,6 @@ package ru.max.currencyconverter.currapp.service;
 
 import ru.max.currencyconverter.currapp.model.entity.Currency;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 /**
