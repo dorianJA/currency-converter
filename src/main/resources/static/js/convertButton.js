@@ -5,7 +5,7 @@ $('#button_convert').click(async function (e) {
         value: $('#amount').val(),
     };
 
-    let response = await fetch('https://small-currency-converter.herokuapp.com/convert', {
+    let response = await fetch('http://localhost:8080/convert', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8',
