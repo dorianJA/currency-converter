@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--        <link href="../static/css/historypage.css" rel="stylesheet" type="text/css">-->
+    <link href="css/historypage.css" rel="stylesheet" type="text/css">
+    <title>History page</title>
+</head>
+<body>
+<div id="header">
+    История конвертаций
+</div>
+
+<div id="main">
+<table id="table_s">
+    <tr>
+        <th>Исходная валюта</th>
+        <th>Целевая валюта</th>
+        <th>Исходная сумма</th>
+        <th>Получаемая сумма</th>
+        <th>Курс на момент конвертации</th>
+        <th>Дата</th>
+    </tr>
+   <th:block th:each="hstr : ${user_history}">
+        <tr>
+            <td th:text="${hstr.originalCurrency}"></td>
+            <td th:text="${hstr.targetCurrency}"></td>
+            <td th:text="${hstr.amount}"></td>
+            <td th:text="${hstr.amountReceived}"></td>
+            <td th:text="${hstr.currentRate}"></td>
+            <td th:text="${hstr.operationDate}"></td>
+        </tr>
+   </th:block>
+
+</table>
+</div>
+</body>
+</html>

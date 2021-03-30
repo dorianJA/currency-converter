@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <link href="../static/css/mystyle.css" rel="stylesheet" type="text/css">-->
+    <link href="css/mystyle.css" rel="stylesheet" type="text/css">
+    <title>Title</title>
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+
+</head>
+<body>
+<div id="header">
+    <h1>Конвертер валют</h1>
+    <a id="logout_id" th:href="@{/logout}">Выйти</a>
+</div>
+
+<div id="main">
+    <form method="post" action="/convert">
+        <div>
+            <select id="fromCharCode" name="fromCharCode" >
+               <th:block th:each="currency: ${listCurrency}">
+                    <option th:text="${currency.charCode + ' ' +currency.name}"></option>
+               </th:block>
+            </select>
+            <select id="toCharCode" name="toCharCode">
+                <th:block th:each="currency: ${listCurrency}">
+                    <option th:text="${currency.charCode + ' ' +currency.name}"></option>
+                </th:block>
+            </select>
+        </div>
+        <div>
+            <input type="number" id="amount"  placeholder="Введите сумму" maxlength="30" required >
+            <input type="text" id="currency_result"> <br>
+<!--            <input type="button" id="convert_button" value="Конвертировать">-->
+        </div>
+        <div class="div_button_convert">
+            <a id="button_convert" href="#" class="button_convert">Конвертировать</a>
+        </div>
+    </form>
+
+    <div class="div_history">
+        <a id="history" th:href="@{/history}"  class="history">История</a>
+    </div>
+</div>
+
+<div id="footer">
+    2021
+</div>
+<script th:src="@{js/convertButton.js}"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+#header {
+    background-color: #1b1f23;
+    color: aliceblue;
+    font-size: 16px;
+    padding: 6px;
+    text-align: center;
+    border-bottom: 3px solid #2b2f33;
+}
+#main {
+    text-align: center;
+    width: 950px;
+    margin: 10px auto;
+}
+#table_s{
+    text-align: center;
+    text-align: -moz-center;
+    border-collapse: separate;
+    border-spacing: 5px;
+    background-color: lightgray;
+    border: 16px solid #2b2f33;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+body{
+    background-color: #545454;
+}
+
+th{
+    font-size: 18px;
+    padding: 10px;
+}
+td{
+
+    padding: 10px;
+}
+
+tr:hover{
+    transition: 0.6s;
+    background-color: silver;
+}
